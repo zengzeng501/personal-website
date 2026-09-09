@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 150" fill="none">
+  <defs>
+    <linearGradient id="gg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#3a7a55"/>
+      <stop offset=".5" stop-color="#1f4e36"/>
+      <stop offset="1" stop-color="#0e2a1d"/>
+    </linearGradient>
+    <linearGradient id="lg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#fbeecb"/>
+      <stop offset=".45" stop-color="#e7c25a"/>
+      <stop offset="1" stop-color="#8a5e1c"/>
+    </linearGradient>
+    <radialGradient id="jade" cx=".4" cy=".3">
+      <stop offset="0" stop-color="#86c5a0"/>
+      <stop offset=".6" stop-color="#3a7a55"/>
+      <stop offset="1" stop-color="#143826"/>
+    </radialGradient>
+  </defs>
+
+  <!-- 底座横梁 (绿色) -->
+  <rect x="20" y="76" width="220" height="11" rx="3" fill="url(#gg)" stroke="url(#lg)" stroke-width="1.4"/>
+  <rect x="22" y="78" width="216" height="3" fill="url(#lg)" opacity=".55"/>
+  <!-- 中央冠饰珠 -->
+  <circle cx="130" cy="82" r="5" fill="url(#jade)" stroke="url(#lg)" stroke-width="1"/>
+
+  <!-- 两侧拱形叶冠 (大) -->
+  <path d="M30 78 C 50 30, 110 14, 130 14 C 150 14, 210 30, 230 78 Z"
+        fill="url(#gg)" stroke="url(#lg)" stroke-width="1.8"/>
+  <!-- 叶冠内描金脉 -->
+  <g fill="none" stroke="url(#lg)" stroke-width="1.2" opacity=".85">
+    <path d="M130 14 Q 110 40, 100 76"/>
+    <path d="M130 14 Q 150 40, 160 76"/>
+    <path d="M130 14 Q  80 50,  50 78"/>
+    <path d="M130 14 Q 180 50, 210 78"/>
+    <path d="M130 14 Q 130 40, 130 76"/>
+  </g>
+
+  <!-- 顶部尖顶+小尖 -->
+  <circle cx="130" cy="6" r="6" fill="url(#lg)"/>
+  <circle cx="130" cy="6" r="2.4" fill="#fff7e0"/>
+
+  <!-- 两侧对称 acanthus 叶 -->
+  <g fill="url(#gg)" stroke="url(#lg)" stroke-width="1.4">
+    <path d="M24 76 C 12 56, 14 40, 30 38 C 32 50, 30 64, 24 76 Z"/>
+    <path d="M236 76 C 248 56, 246 40, 230 38 C 228 50, 230 64, 236 76 Z"/>
+  </g>
+
+  <!-- 中央大吊坠 -->
+  <g transform="translate(130 86)">
+    <!-- 项链环 -->
+    <circle r="9" fill="none" stroke="url(#lg)" stroke-width="2"/>
+    <!-- 玉蛋 -->
+    <ellipse cx="0" cy="28" rx="22" ry="28" fill="url(#jade)" stroke="url(#lg)" stroke-width="2"/>
+    <!-- 玉蛋高光 -->
+    <ellipse cx="-6" cy="20" rx="6" ry="10" fill="#d4ecc3" opacity=".5"/>
+    <!-- 玉环底 -->
+    <ellipse cx="0" cy="58" rx="14" ry="5" fill="url(#gg)" stroke="url(#lg)" stroke-width="1.4"/>
+    <!-- 玉环垂珠 -->
+    <circle cx="0" cy="65" r="2.4" fill="url(#lg)"/>
+  </g>
+
+  <!-- 两侧下垂小玉滴 -->
+  <g>
+    <ellipse cx="80" cy="112" rx="9" ry="12" fill="url(#jade)" stroke="url(#lg)" stroke-width="1.4"/>
+    <ellipse cx="180" cy="112" rx="9" ry="12" fill="url(#jade)" stroke="url(#lg)" stroke-width="1.4"/>
+    <ellipse cx="76" cy="108" rx="3" ry="5" fill="#d4ecc3" opacity=".5"/>
+    <ellipse cx="176" cy="108" rx="3" ry="5" fill="#d4ecc3" opacity=".5"/>
+  </g>
+</svg>

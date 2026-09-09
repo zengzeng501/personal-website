@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 160" fill="none">
+  <defs>
+    <radialGradient id="bg" cx=".4" cy=".3">
+      <stop offset="0" stop-color="#3d3d3d"/>
+      <stop offset=".7" stop-color="#0e0e0e"/>
+      <stop offset="1" stop-color="#000"/>
+    </radialGradient>
+    <linearGradient id="sg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f4f6f8"/>
+      <stop offset=".5" stop-color="#c9d1d8"/>
+      <stop offset="1" stop-color="#5a6068"/>
+    </linearGradient>
+    <radialGradient id="rb" cx=".4" cy=".3">
+      <stop offset="0" stop-color="#7a1a2a"/>
+      <stop offset=".7" stop-color="#3a0a14"/>
+      <stop offset="1" stop-color="#15050a"/>
+    </radialGradient>
+  </defs>
+
+  <!-- 卷草主干 (暗银色) -->
+  <path d="M40 8 C 18 30, 18 60, 38 80 S 60 110, 40 132 S 22 148, 24 152"
+        stroke="url(#sg)" stroke-width="3" fill="none" stroke-linecap="round"/>
+
+  <!-- 三朵暗玫瑰 (黑+银高光+深红内心) -->
+  <g transform="translate(34 38)">
+    <circle r="13" fill="url(#bg)"/>
+    <circle r="13" fill="url(#rb)" opacity=".85"/>
+    <circle r="9"  fill="#1a0a0e" opacity=".7"/>
+    <circle r="4.5" fill="#4a1820"/>
+    <circle r="2"  fill="#7a1a2a"/>
+    <circle r="13" fill="none" stroke="url(#sg)" stroke-width="1" opacity=".6"/>
+  </g>
+  <g transform="translate(46 86)">
+    <circle r="16" fill="url(#bg)"/>
+    <circle r="16" fill="url(#rb)" opacity=".85"/>
+    <circle r="11" fill="#1a0a0e" opacity=".7"/>
+    <circle r="6" fill="#4a1820"/>
+    <circle r="3" fill="#7a1a2a"/>
+    <circle r="16" fill="none" stroke="url(#sg)" stroke-width="1" opacity=".6"/>
+  </g>
+  <g transform="translate(36 134)">
+    <circle r="12" fill="url(#bg)"/>
+    <circle r="12" fill="url(#rb)" opacity=".85"/>
+    <circle r="8"  fill="#1a0a0e" opacity=".7"/>
+    <circle r="4" fill="#4a1820"/>
+    <circle r="2" fill="#7a1a2a"/>
+    <circle r="12" fill="none" stroke="url(#sg)" stroke-width="1" opacity=".6"/>
+  </g>
+
+  <!-- 银巴旦叶 -->
+  <g fill="url(#sg)" opacity=".85">
+    <path d="M18 50 q-10 -3 -14 -12 q12 -2 16 6 z"/>
+    <path d="M62 70  q10 -3 14 -12 q-12 -2 -16 6 z"/>
+    <path d="M16 100 q-9 -1 -13 -10 q12 -4 16 4 z"/>
+    <path d="M64 118 q10 -2 14 -10 q-12 -3 -16 4 z"/>
+  </g>
+</svg>

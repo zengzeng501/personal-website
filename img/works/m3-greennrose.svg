@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 160" fill="none">
+  <defs>
+    <linearGradient id="gg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#3a7a55"/>
+      <stop offset="1" stop-color="#0e2a1d"/>
+    </linearGradient>
+    <linearGradient id="lg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#fbeecb"/>
+      <stop offset=".5" stop-color="#e7c25a"/>
+      <stop offset="1" stop-color="#8a5e1c"/>
+    </linearGradient>
+    <radialGradient id="rose" cx=".4" cy=".3">
+      <stop offset="0" stop-color="#f3a8b6"/>
+      <stop offset=".6" stop-color="#c97a8a"/>
+      <stop offset="1" stop-color="#7a4250"/>
+    </radialGradient>
+  </defs>
+
+  <!-- 卷草主干 (描金) -->
+  <path d="M40 8 C 18 30, 18 60, 38 80 S 60 110, 40 132 S 22 148, 24 152"
+        stroke="url(#lg)" stroke-width="3" fill="none" stroke-linecap="round"/>
+
+  <!-- 三朵粉色玫瑰 -->
+  <g transform="translate(34 38)">
+    <circle r="13" fill="url(#rose)"/>
+    <circle r="9"  fill="#f7c1c7" opacity=".85"/>
+    <circle r="5"  fill="#e98ea0"/>
+    <circle r="2"  fill="#b85f70"/>
+    <circle r="13" fill="none" stroke="url(#lg)" stroke-width="1" opacity=".7"/>
+  </g>
+  <g transform="translate(46 86)">
+    <circle r="16" fill="url(#rose)"/>
+    <circle r="11" fill="#f7c1c7" opacity=".85"/>
+    <circle r="6"  fill="#e98ea0"/>
+    <circle r="3"  fill="#b85f70"/>
+    <circle r="16" fill="none" stroke="url(#lg)" stroke-width="1" opacity=".7"/>
+  </g>
+  <g transform="translate(36 134)">
+    <circle r="12" fill="url(#rose)"/>
+    <circle r="8"  fill="#f7c1c7" opacity=".85"/>
+    <circle r="4"  fill="#e98ea0"/>
+    <circle r="2"  fill="#b85f70"/>
+    <circle r="12" fill="none" stroke="url(#lg)" stroke-width="1" opacity=".7"/>
+  </g>
+
+  <!-- 绿色 acanthus 叶 -->
+  <g fill="url(#gg)" stroke="url(#lg)" stroke-width=".8">
+    <path d="M18 50 q-10 -3 -14 -12 q12 -2 16 6 z"/>
+    <path d="M62 70  q10 -3 14 -12 q-12 -2 -16 6 z"/>
+    <path d="M16 100 q-9 -1 -13 -10 q12 -4 16 4 z"/>
+    <path d="M64 118 q10 -2 14 -10 q-12 -3 -16 4 z"/>
+  </g>
+</svg>

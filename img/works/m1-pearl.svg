@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 100" fill="none">
+  <defs>
+    <radialGradient id="pg" cx=".4" cy=".3">
+      <stop offset="0" stop-color="#fff"/>
+      <stop offset=".55" stop-color="#f0d9c2"/>
+      <stop offset="1" stop-color="#a38572"/>
+    </radialGradient>
+    <linearGradient id="cg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#fbeecb"/>
+      <stop offset=".4" stop-color="#e7c25a"/>
+      <stop offset="1" stop-color="#8a5e1c"/>
+    </linearGradient>
+  </defs>
+
+  <!-- 上锚：金色涡卷+中央花 -->
+  <g transform="translate(100 14)">
+    <path d="M-26 0 C -22 -10, -10 -10, -10 -2 S -22 6, -22 14" stroke="url(#cg)" stroke-width="2.2" fill="none"/>
+    <path d="M 26 0 C  22 -10,  10 -10,  10 -2 S  22 6,  22 14" stroke="url(#cg)" stroke-width="2.2" fill="none"/>
+    <circle r="6" fill="url(#cg)"/>
+    <circle r="2" fill="#fff7e0"/>
+  </g>
+
+  <!-- 两条主垂链 -->
+  <g stroke="#8a5e1c" stroke-width="1" fill="url(#pg)">
+    <line x1="76"  y1="20" x2="92"  y2="76" stroke="#a38572" stroke-width=".5"/>
+    <line x1="124" y1="20" x2="108" y2="76" stroke="#a38572" stroke-width=".5"/>
+  </g>
+
+  <!-- 珍珠串 (每条 6 颗) -->
+  <g fill="url(#pg)" stroke="#a38572" stroke-width=".4">
+    <circle cx="76"  cy="22" r="4.2"/>
+    <circle cx="80"  cy="32" r="4.4"/>
+    <circle cx="84"  cy="42" r="4.6"/>
+    <circle cx="88"  cy="52" r="4.8"/>
+    <circle cx="92"  cy="62" r="5"/>
+    <circle cx="100" cy="76" r="6"/>
+    <circle cx="124" cy="22" r="4.2"/>
+    <circle cx="120" cy="32" r="4.4"/>
+    <circle cx="116" cy="42" r="4.6"/>
+    <circle cx="112" cy="52" r="4.8"/>
+    <circle cx="108" cy="62" r="5"/>
+  </g>
+  <g fill="#fff" opacity=".6">
+    <circle cx="76"  cy="21" r="1.4"/>
+    <circle cx="80"  cy="31" r="1.5"/>
+    <circle cx="84"  cy="41" r="1.6"/>
+    <circle cx="88"  cy="51" r="1.7"/>
+    <circle cx="92"  cy="61" r="1.7"/>
+    <circle cx="124" cy="21" r="1.4"/>
+    <circle cx="120" cy="31" r="1.5"/>
+    <circle cx="116" cy="41" r="1.6"/>
+    <circle cx="112" cy="51" r="1.7"/>
+    <circle cx="108" cy="61" r="1.7"/>
+  </g>
+</svg>

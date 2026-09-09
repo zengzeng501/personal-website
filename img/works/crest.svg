@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 130 72">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#fdf0c4"/>
+      <stop offset=".45" stop-color="#e0b54e"/>
+      <stop offset="1" stop-color="#9c7320"/>
+    </linearGradient>
+  </defs>
+  <!-- 两侧卷草 -->
+  <path d="M38 46 C 22 44, 14 32, 22 27 C 28 23, 31 32, 26 37 C 31 33, 37 36, 37 43 Z" fill="url(#g)" stroke="#6f4e16" stroke-width="1"/>
+  <path d="M92 46 C 108 44, 116 32, 108 27 C 102 23, 99 32, 104 37 C 99 33, 93 36, 93 43 Z" fill="url(#g)" stroke="#6f4e16" stroke-width="1"/>
+  <!-- 冠座 -->
+  <rect x="38" y="44" width="54" height="12" rx="4" fill="url(#g)" stroke="#6f4e16" stroke-width="1"/>
+  <!-- 冠尖 -->
+  <path d="M44 44 L40 22 L54 38 L65 16 L76 38 L90 22 L86 44 Z" fill="url(#g)" stroke="#6f4e16" stroke-width="1" stroke-linejoin="round"/>
+  <!-- 冠尖宝石 -->
+  <circle cx="41" cy="24" r="4" fill="#e9a6b0" stroke="#6f4e16" stroke-width=".8"/>
+  <circle cx="65" cy="18" r="4.6" fill="#e9a6b0" stroke="#6f4e16" stroke-width=".8"/>
+  <circle cx="89" cy="24" r="4" fill="#e9a6b0" stroke="#6f4e16" stroke-width=".8"/>
+  <!-- 中心心形宝石 -->
+  <path d="M65 60 C 58 52, 50 52, 50 58 C 50 64, 65 70, 65 70 C 65 70, 80 64, 80 58 C 80 52, 72 52, 65 60 Z" fill="#f2c0c8" stroke="#6f4e16" stroke-width="1"/>
+  <!-- 高光 -->
+  <path d="M46 42 L43 26 L54 38" fill="none" stroke="#fff6dc" stroke-width="1.3" opacity=".65" stroke-linejoin="round"/>
+</svg>

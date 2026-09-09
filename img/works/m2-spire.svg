@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 130" fill="none">
+  <defs>
+    <linearGradient id="sg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#f4f6f8"/>
+      <stop offset=".4" stop-color="#c9d1d8"/>
+      <stop offset="1" stop-color="#4a525c"/>
+    </linearGradient>
+    <linearGradient id="dg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#3a3a3a"/>
+      <stop offset="1" stop-color="#0e0e0e"/>
+    </linearGradient>
+  </defs>
+
+  <!-- 底座横梁 -->
+  <rect x="20" y="84" width="200" height="10" rx="3" fill="url(#dg)" stroke="url(#sg)" stroke-width="1.2"/>
+  <rect x="22" y="86" width="196" height="3" fill="url(#sg)" opacity=".5"/>
+
+  <!-- 两侧短尖塔 -->
+  <g>
+    <path d="M44 84 L48 38 L52 84 Z" fill="url(#dg)" stroke="url(#sg)" stroke-width="1.2"/>
+    <circle cx="48" cy="34" r="3.5" fill="url(#sg)"/>
+  </g>
+  <g>
+    <path d="M188 84 L192 38 L196 84 Z" fill="url(#dg)" stroke="url(#sg)" stroke-width="1.2"/>
+    <circle cx="192" cy="34" r="3.5" fill="url(#sg)"/>
+  </g>
+
+  <!-- 中央主尖顶 (高耸哥特尖) -->
+  <path d="M88 84 L120 4 L152 84 Z" fill="url(#dg)" stroke="url(#sg)" stroke-width="1.6"/>
+  <!-- 主尖顶的 3 道亮脊 -->
+  <line x1="120" y1="4"  x2="120" y2="84" stroke="url(#sg)" stroke-width="1" opacity=".55"/>
+  <line x1="108" y1="84" x2="120" y2="14" stroke="url(#sg)" stroke-width=".6" opacity=".35"/>
+  <line x1="132" y1="84" x2="120" y2="14" stroke="url(#sg)" stroke-width=".6" opacity=".35"/>
+  <!-- 塔顶圆球+小尖 -->
+  <circle cx="120" cy="2" r="3.5" fill="url(#sg)"/>
+
+  <!-- 主顶底部阴影花 (模拟珠宝) -->
+  <circle cx="120" cy="78" r="6" fill="#1a1a1a" stroke="url(#sg)" stroke-width="1"/>
+  <circle cx="120" cy="78" r="3" fill="#5a1828"/>
+  <circle cx="120" cy="78" r="1.4" fill="#a83248"/>
+
+  <!-- 主顶两侧 acanthus 叶 -->
+  <g fill="url(#dg)" stroke="url(#sg)" stroke-width="1.2">
+    <path d="M88 84 C 78 70, 70 60, 64 70 C 70 76, 80 80, 88 84 Z"/>
+    <path d="M152 84 C 162 70, 170 60, 176 70 C 170 76, 160 80, 152 84 Z"/>
+  </g>
+
+  <!-- 中央珠链（垂下） -->
+  <g stroke="url(#sg)" stroke-width=".5" fill="#3a3a3a">
+    <circle cx="100" cy="108" r="3"/>
+    <circle cx="120" cy="118" r="4"/>
+    <circle cx="140" cy="108" r="3"/>
+  </g>
+  <circle cx="120" cy="118" r="1.6" fill="#5a1828"/>
+</svg>

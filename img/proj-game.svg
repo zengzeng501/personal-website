@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600">
+  <defs>
+    <radialGradient id="floor" cx="50%" cy="100%" r="80%">
+      <stop offset="0%" stop-color="#5DA9C9" stop-opacity=".8"/>
+      <stop offset="100%" stop-color="#1F4A6B"/>
+    </radialGradient>
+  </defs>
+  <rect width="800" height="600" fill="#0F2A3D"/>
+  <!-- 体感交互·九宫格地板 -->
+  <g transform="translate(200 280)">
+    <rect width="400" height="280" fill="url(#floor)" rx="8"/>
+    <g stroke="#EFCF6B" stroke-width="2.5" opacity=".75" fill="none">
+      <line x1="0" y1="0" x2="400" y2="0"/>
+      <line x1="0" y1="93" x2="400" y2="93"/>
+      <line x1="0" y1="186" x2="400" y2="186"/>
+      <line x1="0" y1="93" x2="400" y2="93" transform="translate(0 0)"/>
+      <line x1="133" y1="0" x2="133" y2="280"/>
+      <line x1="266" y1="0" x2="266" y2="280"/>
+    </g>
+    <!-- 玩家站位圆点 -->
+    <circle cx="200" cy="140" r="22" fill="#EFCF6B"/>
+    <circle cx="200" cy="140" r="36" fill="none" stroke="#EFCF6B" stroke-width="2" opacity=".5"/>
+    <!-- 抓取手势 -->
+    <path d="M200 110 q-15 -25 -10 -45" stroke="#FBF8F1" stroke-width="3" fill="none" stroke-linecap="round"/>
+  </g>
+  <!-- 摄像头提示 -->
+  <g transform="translate(370 70)">
+    <rect x="0" y="0" width="60" height="40" rx="4" fill="#2C4A6E" stroke="#EFCF6B" stroke-width="2"/>
+    <circle cx="30" cy="20" r="10" fill="#0F2A3D" stroke="#EFCF6B" stroke-width="2"/>
+    <circle cx="30" cy="20" r="3" fill="#C24A35"/>
+    <text x="30" y="62" text-anchor="middle" font-family="Menlo, monospace" font-size="10" fill="#EFCF6B" letter-spacing="2">CAMERA</text>
+  </g>
+  <text x="400" y="120" text-anchor="middle" font-family="Georgia, serif" font-size="34" letter-spacing="4" fill="#FBF8F1">体感认知训练游戏</text>
+  <text x="400" y="158" text-anchor="middle" font-family="Menlo, monospace" font-size="13" letter-spacing="6" fill="#EFCF6B">CAMERA · NINE-GRID · ZERO TOUCH</text>
+  <!-- 数据标签 -->
+  <g transform="translate(60 470)" font-family="Georgia, serif" fill="#FBF8F1">
+    <text font-size="20" font-weight="bold">留存 82.5%</text>
+    <text y="26" font-size="12" font-family="Menlo, monospace" letter-spacing="3" fill="#5DA9C9" opacity=".7">RETENTION</text>
+  </g>
+  <g transform="translate(360 470)" font-family="Georgia, serif" fill="#FBF8F1">
+    <text font-size="20" font-weight="bold">满意度 94.2</text>
+    <text y="26" font-size="12" font-family="Menlo, monospace" letter-spacing="3" fill="#5DA9C9" opacity=".7">SATISFACTION</text>
+  </g>
+  <text x="740" y="568" text-anchor="end" font-family="Menlo, monospace" font-size="11" letter-spacing="3" fill="#5DA9C9" opacity=".7">2024 · 项目负责人</text>
+</svg>

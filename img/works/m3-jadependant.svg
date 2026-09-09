@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 130" fill="none">
+  <defs>
+    <linearGradient id="gg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#3a7a55"/>
+      <stop offset="1" stop-color="#0e2a1d"/>
+    </linearGradient>
+    <linearGradient id="lg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#fbeecb"/>
+      <stop offset=".5" stop-color="#e7c25a"/>
+      <stop offset="1" stop-color="#8a5e1c"/>
+    </linearGradient>
+    <radialGradient id="jade" cx=".4" cy=".3">
+      <stop offset="0" stop-color="#86c5a0"/>
+      <stop offset=".6" stop-color="#3a7a55"/>
+      <stop offset="1" stop-color="#143826"/>
+    </radialGradient>
+  </defs>
+
+  <!-- 上锚：金色涡卷 -->
+  <g transform="translate(110 14)">
+    <path d="M-26 0 C -22 -10, -10 -10, -10 -2 S -22 6, -22 14" stroke="url(#lg)" stroke-width="2.2" fill="none"/>
+    <path d="M 26 0 C  22 -10,  10 -10,  10 -2 S  22 6,  22 14" stroke="url(#lg)" stroke-width="2.2" fill="none"/>
+    <circle r="6" fill="url(#jade)" stroke="url(#lg)" stroke-width="1"/>
+  </g>
+
+  <!-- 4 颗玉珠沿绳垂下 -->
+  <g stroke="url(#lg)" stroke-width=".6" fill="none">
+    <line x1="82"  y1="18" x2="100" y2="62"/>
+    <line x1="138" y1="18" x2="120" y2="62"/>
+    <line x1="100" y1="62" x2="110" y2="92"/>
+    <line x1="120" y1="62" x2="110" y2="92"/>
+  </g>
+  <g>
+    <ellipse cx="82"  cy="22" rx="5" ry="6" fill="url(#jade)" stroke="url(#lg)" stroke-width=".8"/>
+    <ellipse cx="138" cy="22" rx="5" ry="6" fill="url(#jade)" stroke="url(#lg)" stroke-width=".8"/>
+    <ellipse cx="100" cy="62" rx="6" ry="7" fill="url(#jade)" stroke="url(#lg)" stroke-width=".8"/>
+    <ellipse cx="120" cy="62" rx="6" ry="7" fill="url(#jade)" stroke="url(#lg)" stroke-width=".8"/>
+  </g>
+
+  <!-- 中央大玉蛋垂坠 -->
+  <g transform="translate(110 92)">
+    <ellipse cx="0" cy="14" rx="20" ry="22" fill="url(#jade)" stroke="url(#lg)" stroke-width="1.6"/>
+    <ellipse cx="-5" cy="6" rx="5" ry="8" fill="#d4ecc3" opacity=".5"/>
+    <!-- 玉蛋底座金属圈 -->
+    <ellipse cx="0" cy="36" rx="14" ry="5" fill="url(#lg)"/>
+    <!-- 中央垂珠 -->
+    <circle cx="0" cy="42" r="3" fill="url(#lg)"/>
+  </g>
+</svg>

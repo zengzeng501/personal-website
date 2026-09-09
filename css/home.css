@@ -1,0 +1,185 @@
+/* ===== 首页 5 模块洞洞板 · 物件直接钉板版 ===== */
+
+/* 顶部身份条仍用 paper 卡（视觉锚点保留） */
+.board .tape { grid-column: 1 / 13; }
+.board .tape { grid-column: 2 / 12; }
+.tape .tagline {
+  margin-top: 14px;
+  font-family: var(--serif);
+  font-size: clamp(18px, 2.4vw, 26px);
+  line-height: 1.5;
+  color: var(--ink);
+}
+.tape .tagline .en {
+  display: block;
+  margin-top: 6px;
+  font-family: var(--mono);
+  font-size: 13px;
+  letter-spacing: .04em;
+  color: var(--ink-soft);
+}
+
+/* ============ 5 模块挂件（透明 · 物件直接钉板） ============ */
+/* 关键：override .item 的 paper 卡底 + 阴影，让透明 PNG 物件直接漂在洞洞板底纹上 */
+.item.mod {
+  background: transparent !important;
+  box-shadow: none !important;
+  border-radius: 0;
+  padding: 28px 14px 14px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* 保留 --r 旋转（从 .item 继承） */
+}
+
+/* 第二排：左窄(PROFILE) · 中宽(CASES) · 右窄(SIGNAL)，错落钉在板上 */
+.mod.m1 { grid-column: 1 / 5;  --r: -1.4deg; --d: .10s; }
+.mod.m2 { grid-column: 5 / 10; --r:  0.9deg; --d: .18s; }
+.mod.m3 { grid-column: 10 / 13; --r: -0.5deg; --d: .26s; }
+
+/* 第三排：左下(ECHO) · 右下(CONNECT)，错位 */
+.mod.m4 { grid-column: 2 / 7;  --r:  1.6deg; --d: .34s; }
+.mod.m5 { grid-column: 7 / 12; --r: -1.0deg; --d: .42s; }
+
+/* 主视觉：透明 PNG 物件 + drop-shadow 模拟钉在板上的深度 */
+.m-art {
+  max-width: 100%;
+  max-height: 280px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 6px 10px rgba(40,30,20,.24));
+  transition: transform .35s cubic-bezier(.22,.61,.36,1);
+}
+.item.mod.clickable:hover .m-art {
+  transform: translateY(-5px) scale(1.07);
+}
+.item.mod.clickable:hover {
+  transform: translateY(-7px) rotate(0deg) scale(1.02);
+  z-index: 5;
+}
+
+/* 标签：物件下方一个「编号+标题+按钮」的小标签，无纸卡 */
+.m-tag {
+  margin-top: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 7px;
+  text-align: center;
+  max-width: 92%;
+}
+.m-num {
+  font-family: var(--mono);
+  font-size: 10.5px;
+  letter-spacing: .18em;
+  color: var(--ink-soft);
+  background: rgba(255,250,235,.78);
+  padding: 3px 9px;
+  border-radius: 3px;
+  border: 1px solid rgba(120,100,70,.22);
+}
+.m-title {
+  font-family: var(--serif);
+  font-size: 19px;
+  font-weight: 700;
+  color: var(--ink);
+  margin: 0;
+  line-height: 1.25;
+  white-space: nowrap;
+}
+.m-btn {
+  display: inline-block;
+  font-family: var(--mono);
+  font-size: 10.5px;
+  letter-spacing: .16em;
+  color: var(--red);
+  border: 1.4px solid var(--red);
+  border-radius: 99px;
+  padding: 5px 11px;
+  background: rgba(255,250,235,.6);
+  transition: background .18s ease, color .18s ease;
+}
+.item.mod.clickable:hover .m-btn {
+  background: var(--red);
+  color: var(--paper);
+}
+
+/* 图钉散布：5 个挂件图钉位置错开，营造「钉满板」感 */
+.mod.m1 .pin { left: 30%; }
+.mod.m2 .pin { left: 50%; }
+.mod.m3 .pin { left: 70%; }
+.mod.m4 .pin { left: 35%; }
+.mod.m5 .pin { left: 50%; }
+
+/* 板面留白加大，让挂件之间有真实缝隙 */
+.board-grid { gap: 54px 32px; align-items: start; }
+
+@media (max-width: 720px) {
+  .board .tape { grid-column: 1 / -1; }
+  .board-grid { grid-template-columns: 1fr; }
+  .mod {
+    grid-column: 1 / -1 !important;
+  }
+  .m-art { max-height: 240px; }
+  .m-title { font-size: 22px; }
+}
+
+/* ============ 可视化编辑模式样式 ============ */
+body.editing .board-grid { position: relative; min-height: 60vh; }
+body.editing .item,
+body.editing .tape {
+  animation: none !important;
+  cursor: grab;
+  touch-action: none;
+  /* 拖动时去掉过渡，否则跟手会拖影 */
+  transition: none !important;
+}
+/* 编辑态下冻结 hover 效果：位置只由 left/top 决定，拖动才不会跳 */
+body.editing .item.clickable:hover,
+body.editing .item.mod.clickable:hover {
+  transform: rotate(var(--r, 0deg)) !important;
+  box-shadow: none !important;
+}
+body.editing .item.mod.clickable:hover .m-art { transform: none !important; }
+body.editing .item.dragging,
+body.editing .item.on-top { cursor: grabbing; z-index: 50; opacity: .96; }
+body.editing [contenteditable="true"] {
+  outline: 2px dashed var(--red);
+  outline-offset: 3px;
+  cursor: text;
+}
+body.editing .board { outline: 2px dashed rgba(34,49,63,.25); }
+
+.edit-bar {
+  position: fixed;
+  left: 50%;
+  bottom: 22px;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 16px;
+  background: rgba(34, 49, 63, .94);
+  color: #FBF8F1;
+  border-radius: 999px;
+  box-shadow: 0 10px 30px rgba(0,0,0,.3);
+  z-index: 999;
+  font-family: var(--sans);
+  font-size: 13px;
+}
+.edit-bar[hidden] { display: none; }
+.edit-bar .eb-tip { opacity: .85; letter-spacing: .02em; }
+.eb-btn {
+  border: 1px solid rgba(251,248,241,.4);
+  background: transparent;
+  color: #FBF8F1;
+  font-size: 13px;
+  padding: 7px 14px;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: all .15s;
+}
+.eb-btn:hover { background: rgba(251,248,241,.15); }
+.eb-btn.eb-primary { background: var(--red); border-color: var(--red); }
+.eb-btn.eb-primary:hover { background: #a83a28; }

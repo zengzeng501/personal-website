@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 72 130">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="0.55" y2="1">
+      <stop offset="0" stop-color="#fbeecb"/>
+      <stop offset=".32" stop-color="#e7c25a"/>
+      <stop offset=".64" stop-color="#c2912f"/>
+      <stop offset="1" stop-color="#8a5e1c"/>
+    </linearGradient>
+    <linearGradient id="g2" x1="0" y1="0" x2="0.5" y2="1">
+      <stop offset="0" stop-color="#d9a93f"/>
+      <stop offset="1" stop-color="#6e3f12"/>
+    </linearGradient>
+  </defs>
+  <!-- 攀爬 C 卷草 -->
+  <path d="M22 122 C 22 92, 40 70, 40 46 C 40 28, 24 22, 18 32 C 27 32, 29 43, 22 52 C 31 49, 33 35, 20 38 C 29 56, 15 72, 15 98 C 15 112, 24 120, 33 114" fill="none" stroke="url(#g)" stroke-width="6.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- 卷草端 acanthus 叶 -->
+  <path d="M33 80 C 46 74, 57 80, 59 95 C 49 88, 40 90, 38 103 C 38 90, 31 84, 33 80 Z" fill="url(#g)" stroke="#6e3f12" stroke-width=".9"/>
+  <!-- 顶部小卷叶 -->
+  <path d="M20 38 C 14 34, 12 42, 17 46 C 20 43, 24 44, 25 49 Z" fill="url(#g)" stroke="#6e3f12" stroke-width=".8"/>
+  <!-- 暗槽线 -->
+  <path d="M22 122 C 22 92, 40 70, 40 46 C 40 28, 24 22, 18 32" fill="none" stroke="url(#g2)" stroke-width="2.2" opacity=".5" stroke-linecap="round"/>
+  <!-- 高光 -->
+  <path d="M20 118 C 20 90, 36 70, 36 48" fill="none" stroke="#fff6dc" stroke-width="1.3" opacity=".55" stroke-linecap="round"/>
+</svg>

@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+<title>曾玲 · 个人网页 | 个人作品集</title>
+<meta name="description" content="曾玲的应用心理学硕士 + 营销策划作品集。洞洞板形式：人物档案、作品档案、自媒体信号站、他人评价、联系方式。">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/home.css?v=20260916">
+</head>
+<body>
+
+<nav class="nav">
+  <a class="nav-brand" href="index.html">
+    <span class="monogram">曾</span>
+    <span class="text">曾玲 · 个人网页</span>
+  </a>
+  <div class="nav-links">
+    <a href="index.html" class="active">首页</a>
+    <a href="works.html">作品</a>
+    <a href="about.html">关于</a>
+    <a href="media.html">自媒体</a>
+    <a href="contact.html">联系</a>
+  </div>
+</nav>
+
+<div class="board-wrap">
+  <div class="board">
+    <div class="board-grid">
+
+      <!-- 顶部：一句话定位 + 身份牌 -->
+      <header class="item tape">
+        <div class="pin red"></div>
+        <div class="row">
+          <div class="name">曾玲<em>.</em></div>
+          <div class="role">应用心理学硕士 · 营销策划 / 用户研究 / 内容策划 / 人力资源</div>
+        </div>
+        <div class="tagline">观察人，捕捉信号，把洞察变成有效的创意。<br><span class="en">I observe people, decode signals, and turn insights into ideas.</span></div>
+      </header>
+
+      <!-- 01 人物档案 · 档案袋 -->
+      <a class="item mod m1 clickable" href="about.html">
+        <div class="pin red"></div>
+        <img class="m-art" src="img/board-folder-cutout.png" alt="人物档案 档案袋">
+        <div class="m-tag">
+          <span class="m-num">01 · PROFILE FILE</span>
+          <h3 class="m-title">我是谁？</h3>
+          <span class="m-btn">OPEN PROFILE →</span>
+        </div>
+      </a>
+
+      <!-- 02 作品档案 · 放大镜 -->
+      <a class="item mod m2 clickable" href="works.html">
+        <div class="pin"></div>
+        <img class="m-art" src="img/board-magnifier-cutout.png" alt="作品档案 放大镜">
+        <div class="m-tag">
+          <span class="m-num">02 · CASE FILES</span>
+          <h3 class="m-title">我做过什么？</h3>
+          <span class="m-btn">VIEW ALL CASES →</span>
+        </div>
+      </a>
+
+      <!-- 03 自媒体 · 相机 -->
+      <a class="item mod m3 clickable" href="media.html">
+        <div class="pin blue"></div>
+        <img class="m-art" src="img/board-camera-cutout.png" alt="自媒体信号站 相机">
+        <div class="m-tag">
+          <span class="m-num">03 · SIGNAL STATION</span>
+          <h3 class="m-title">我在输出什么？</h3>
+          <span class="m-btn">VIEW MY SIGNALS →</span>
+        </div>
+      </a>
+
+      <!-- 04 他人评价 · 钢笔 -->
+      <a class="item mod m4 clickable" href="echo.html">
+        <div class="pin"></div>
+        <img class="m-art" src="img/board-pen-cutout.png" alt="他人评价 钢笔">
+        <div class="m-tag">
+          <span class="m-num">04 · ECHO BOARD</span>
+          <h3 class="m-title">别人眼中的我</h3>
+          <span class="m-btn">MORE ECHO →</span>
+        </div>
+      </a>
+
+      <!-- 05 联系方式 · 信封 -->
+      <a class="item mod m5 clickable" href="contact.html">
+        <div class="pin red"></div>
+        <img class="m-art" src="img/board-envelope-cutout.png" alt="联系方式 航空信封">
+        <div class="m-tag">
+          <span class="m-num">05 · CONNECT</span>
+          <h3 class="m-title">如果你正在寻找这样的人</h3>
+          <span class="m-btn">SEND MESSAGE →</span>
+        </div>
+      </a>
+
+    </div>
+
+    <div class="board-foot">
+      <span>USER INSIGHT · DATA · CREATIVE PLANNING</span>
+      <span>LAST UPDATED 2026.08</span>
+    </div>
+  </div>
+</div>
+
+<footer class="footer">
+  <span>© 2026 曾玲 · 个人网页 · 宁波</span>
+  <span>MADE WITH CARE · PORTFOLIO</span>
+</footer>
+
+<!-- ============ 可视化编辑模式（?edit=1 开启） ============ -->
+<div class="edit-bar" id="editBar" hidden>
+  <span class="eb-tip">拖拽挂件摆位置 · ⌘/Ctrl+滚轮 改大小 · Shift+滚轮 旋转 · 双击文字改内容 · 拖完可点挂件试跳转</span>
+  <button id="ebReset" class="eb-btn">重置</button>
+  <button id="ebExport" class="eb-btn">导出 HTML</button>
+  <button id="ebDone" class="eb-btn eb-primary">完成编辑</button>
+</div>
+
+<script>
+(function () {
+  var params = new URLSearchParams(location.search);
+  if (!params.has('edit')) return;
+
+  var KEY = 'pegboard-layout-v1';
+  var board = document.querySelector('.board');
+  var grid = document.querySelector('.board-grid');
+  var bar = document.getElementById('editBar');
+  var items = Array.prototype.slice.call(grid.children); // tape + 5 mods
+  bar.hidden = false;
+  document.body.classList.add('editing');
+
+  // 网格流 → 绝对定位：保持各挂件「原本的自然位置与宽度」作为编辑起点
+  // 注意：必须先一次性量完所有挂件，再统一改成绝对定位。
+  // 否则改一个、量一个——前一个刚脱离流，后面的就往上跳，最终全叠在顶部。
+  function freeze() {
+    var gRect = grid.getBoundingClientRect();
+    var snap = items.map(function (el) {
+      var r = el.getBoundingClientRect();
+      return {
+        el: el,
+        left: r.left - gRect.left,
+        top: r.top - gRect.top,
+        width: r.width,
+        // 把 CSS 里设计的倾角读出来写成行内，避免被 0deg 抹平，也方便滚轮调
+        rot: (getComputedStyle(el).getPropertyValue('--r') || '').trim() || '0deg'
+      };
+    });
+    snap.forEach(function (s) {
+      s.el.style.position = 'absolute';
+      s.el.style.margin = '0';
+      // 关键：CSS Grid 下，绝对定位子元素若仍带 grid-column，
+      // 它的定位基准是「自己那一格的区域」而不是整个板面，left 会被叠加两次。
+      // 清掉网格定位，让基准回到板面左上角。
+      s.el.style.gridArea = 'auto';
+      s.el.style.width = s.width + 'px';
+      s.el.style.left = s.left + 'px';
+      s.el.style.top = s.top + 'px';
+      s.el.style.setProperty('--r', s.rot);
+    });
+    fitBoard();
+  }
+
+  // 挂件改成绝对定位后板子会塌，按最低的挂件把板面撑开
+  function fitBoard() {
+    var bottom = 0;
+    items.forEach(function (el) {
+      var b = parseFloat(el.style.top || 0) + el.offsetHeight;
+      if (b > bottom) bottom = b;
+    });
+    grid.style.minHeight = (bottom + 60) + 'px';
+  }
+
+  function save() {
+    var data = {};
+    items.forEach(function (el, i) {
+      data[i] = {
+        left: el.style.left, top: el.style.top, width: el.style.width,
+        rot: el.style.getPropertyValue('--r') || '',
+        html: el.innerHTML
+      };
+    });
+    try { localStorage.setItem(KEY, JSON.stringify(data)); } catch (e) {}
+  }
+
+  function restore() {
+    var raw;
+    try { raw = localStorage.getItem(KEY); } catch (e) { return; }
+    if (!raw) return;
+    var data = JSON.parse(raw);
+    items.forEach(function (el, i) {
+      if (!data[i]) return;
+      el.style.left = data[i].left;
+      el.style.top = data[i].top;
+      el.style.width = data[i].width;
+      if (data[i].rot) el.style.setProperty('--r', data[i].rot);
+      if (data[i].html) el.innerHTML = data[i].html;
+    });
+  }
+
+  function makeDraggable(el) {
+    var dragging = false, moved = false, sx = 0, sy = 0, ox = 0, oy = 0;
+    el.addEventListener('pointerdown', function (e) {
+      if (e.button !== 0) return;            // 只响应左键
+      if (e.target.isContentEditable) return; // 正在改文字时让位
+      dragging = true; moved = false;
+      sx = e.clientX; sy = e.clientY;
+      ox = parseFloat(el.style.left) || 0; oy = parseFloat(el.style.top) || 0;
+      try { el.setPointerCapture(e.pointerId); } catch (err) {}
+      el.classList.add('dragging');
+      el.classList.add('on-top');
+    });
+    el.addEventListener('pointermove', function (e) {
+      if (!dragging) return;
+      var dx = e.clientX - sx, dy = e.clientY - sy;
+      if (Math.abs(dx) + Math.abs(dy) > 3) moved = true;
+      el.style.left = (ox + dx) + 'px';
+      el.style.top = (oy + dy) + 'px';
+    });
+    el.addEventListener('pointerup', function () {
+      if (!dragging) return;
+      dragging = false;
+      el.classList.remove('dragging');
+      // 释放后保持在上层一段时间（z-index 50），方便接着双击改字或调整
+      setTimeout(function () { el.classList.remove('on-top'); }, 600);
+      if (moved) fitBoard();
+      save();
+    });
+    // 编辑模式下不跳转（这是布局工具，点「完成编辑」再正常浏览）；
+    // 拖动过就阻止事件冒泡。
+    el.addEventListener('click', function (e) {
+      if (document.body.classList.contains('editing')) {
+        e.preventDefault();
+        if (moved) { e.stopPropagation(); moved = false; }
+      }
+    }, true);
+    // 双击改文字
+    el.addEventListener('dblclick', function (e) {
+      var t = e.target.closest('.m-title, .m-num, .name, .role, .tagline');
+      if (!t) return;
+      t.setAttribute('contenteditable', 'true');
+      t.focus();
+      var sel = window.getSelection(), range = document.createRange();
+      range.selectNodeContents(t); sel.removeAllRanges(); sel.addRange(range);
+    });
+    el.addEventListener('blur', function (e) {
+      if (e.target.isContentEditable) { e.target.removeAttribute('contenteditable'); save(); }
+    }, true);
+    // Ctrl/⌘ + 滚轮 = 改宽度；Shift + 滚轮 = 改旋转角度
+    el.addEventListener('wheel', function (e) {
+      if (e.shiftKey) {
+        e.preventDefault();
+        var cur = parseFloat(el.style.getPropertyValue('--r')) || 0;
+        var next = Math.max(-14, Math.min(14, cur + (e.deltaY < 0 ? 0.6 : -0.6)));
+        el.style.setProperty('--r', next.toFixed(1) + 'deg');
+        save();
+        return;
+      }
+      if (!(e.ctrlKey || e.metaKey)) return;
+      e.preventDefault();
+      var w = parseFloat(el.style.width);
+      el.style.width = Math.max(120, w + (e.deltaY < 0 ? 14 : -14)) + 'px';
+      fitBoard();
+      save();
+    }, { passive: false });
+  }
+
+  freeze();
+  restore();
+  fitBoard();
+  items.forEach(makeDraggable);
+  window.addEventListener('resize', fitBoard);
+  // 图片是异步加载的，加载完高度会变，必须重新撑一次板面
+  window.addEventListener('load', fitBoard);
+  items.forEach(function (el) {
+    Array.prototype.forEach.call(el.querySelectorAll('img'), function (img) {
+      if (!img.complete) img.addEventListener('load', fitBoard);
+    });
+  });
+
+  document.getElementById('ebReset').onclick = function () {
+    try { localStorage.removeItem(KEY); } catch (e) {}
+    location.reload();
+  };
+  document.getElementById('ebDone').onclick = function () {
+    document.body.classList.remove('editing');
+    bar.hidden = true;
+    save();
+  };
+  document.getElementById('ebExport').onclick = function () {
+    save();
+    var clone = document.documentElement.outerHTML;
+    var blob = new Blob([clone], { type: 'text/html' });
+    var a = document.createElement('a');
+    a.href = URL.createObjectURL(blob);
+    a.download = 'index-edited.html';
+    a.click();
+  };
+  window.addEventListener('beforeunload', save);
+})();
+</script>
+
+</body>
+</html>

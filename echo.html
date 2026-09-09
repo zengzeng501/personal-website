@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>他人评价 | 曾玲 · 个人网页</title>
+<link rel="stylesheet" href="css/style.css?v=20260916">
+</head>
+<body>
+
+<nav class="nav">
+  <a class="nav-brand" href="index.html">
+    <span class="monogram">曾</span>
+    <span class="text">曾玲 · 个人网页</span>
+  </a>
+  <div class="nav-links">
+    <a href="index.html">首页</a>
+    <a href="works.html">作品</a>
+    <a href="about.html">关于</a>
+    <a href="media.html">自媒体</a>
+    <a href="contact.html">联系</a>
+  </div>
+</nav>
+
+<main class="page">
+  <div class="page-head">
+    <div class="kicker">04 / ECHO BOARD</div>
+    <h1>他人回声</h1>
+    <p class="sub">别人眼中的我——性格、想法与行动力，由身边的人来说。</p>
+  </div>
+
+  <div class="echo-wall">
+    <div class="echo-note" style="--r:-2deg"><div class="pin"></div><p>"性格活泼，胆子时而大时而小，尤其特别乐观。"</p><span>— 朋友</span></div>
+    <div class="echo-note" style="--r:1.5deg"><div class="pin red"></div><p>"脑子里有很多想法，喜欢为朋友分析烦恼。"</p><span>— 同学</span></div>
+    <div class="echo-note" style="--r:-1deg"><div class="pin blue"></div><p>"知道自己想做什么，遇到问题会想办法解决。"</p><span>— 同事</span></div>
+  </div>
+
+  <div class="echo-outro">
+    <p class="cn">我希望自己一直是一个——<b>有想法，但更愿意把想法做出来的人。</b></p>
+    <p class="en">Ideas matter. Execution matters more.</p>
+    <a class="back" href="index.html">← 回到洞洞板</a>
+  </div>
+</main>
+
+<style>
+.echo-wall {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 22px;
+  margin: 10px 0 50px;
+}
+.echo-note {
+  position: relative;
+  background: var(--paper);
+  border-radius: 6px;
+  box-shadow: var(--shadow);
+  padding: 30px 24px 22px;
+  transform: rotate(var(--r, 0deg));
+  transition: transform .25s ease;
+}
+.echo-note:hover { transform: translateY(-5px) rotate(0); }
+.echo-note p {
+  font-family: var(--serif);
+  font-size: 18px;
+  line-height: 1.6;
+  color: var(--ink);
+  margin: 0 0 14px;
+}
+.echo-note span {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: .16em;
+  color: var(--red);
+}
+.echo-outro {
+  text-align: center;
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 32px 0 12px;
+  border-top: 1px dashed var(--paper-edge);
+}
+.echo-outro .cn {
+  font-family: var(--serif);
+  font-size: 20px;
+  line-height: 1.6;
+  color: var(--ink);
+}
+.echo-outro .en {
+  font-family: var(--mono);
+  font-size: 13px;
+  letter-spacing: .1em;
+  color: var(--ink-soft);
+  margin-top: 10px;
+}
+.echo-outro .back {
+  display: inline-block;
+  margin-top: 22px;
+  font-family: var(--mono);
+  font-size: 12px;
+  letter-spacing: .14em;
+  color: var(--red);
+  border: 1.5px solid var(--red);
+  border-radius: 99px;
+  padding: 9px 18px;
+  text-decoration: none;
+  transition: background .18s ease, color .18s ease;
+}
+.echo-outro .back:hover { background: var(--red); color: var(--paper); }
+</style>
+
+<footer class="footer">
+  <span>© 2026 曾玲 · 个人网页 · 宁波</span>
+  <span>MADE WITH CARE · PORTFOLIO</span>
+</footer>
+
+</body>
+</html>
