@@ -33,7 +33,7 @@ function home(){
 }
 function row(q,symbol,meta,id,kind=''){return `<button class="review-row" data-detail="${esc(id)}"><span class="dot ${kind}">${symbol}</span><div><span class="row-meta">${esc(meta)}</span><p>${esc(q.stem)}</p></div><span class="muted">查看解析 ›</span></button>`}
 function pictures(urls=[]){return urls.map(url=>`<button class="image-button" data-zoom="${esc(url)}"><span class="image-loading">正在读取原题图片…</span><img hidden data-asset="${esc(url)}" alt="原题图片"></button>`).join('')}
-function questionBody(q){return `<div class="stem">${esc(q.stem)}</div>${pictures(q.images)}`}
+function questionBody(q){const pics=pictures(q.images);return `<div class="stem">${esc(q.stem)}</div>${q.transcribed&&pics?`<details class="original-shot"><summary>查看原题截图</summary>${pics}</details>`:pics}`}
 function quiz(){const s=state.active;if(!s){view='home';return render()}const q=qmap.get(s.ids[s.index]),answered=s.ids.filter(id=>complete(qmap.get(id),s.answers[id])).length;
  const options=q.kind==='ranking'?`<div class="ranking">${['最符合我','最不符合我'].map((label,ri)=>`<section><h3>${label}</h3>${q.options.map(o=>`<label class="option"><input type="radio" name="rank${ri}" data-rank="${ri}" value="${esc(o.key)}" ${(s.answers[q.id]||'|').split('|')[ri]===o.key?'checked':''}><b>${esc(o.key)}</b><span>${esc(o.text)}</span></label>`).join('')}</section>`).join('')}</div><p class="muted">两项选择不能相同，本题不计分。</p>`:`<div class="options">${q.options.map(o=>`<label class="option ${s.answers[q.id]===o.key?'chosen':''}"><input type="radio" name="answer" value="${esc(o.key)}" ${s.answers[q.id]===o.key?'checked':''}><span class="letter">${esc(o.key)}</span><span>${esc(o.text)}${pictures(o.images)}</span></label>`).join('')}</div>`;
  const nums=s.ids.map((id,i)=>`<button data-index="${i}" class="${s.answers[id]?'answered ':''}${i===s.index?'current':''}">${i+1}</button>`).join('');
@@ -71,4 +71,4 @@ function bind(){
 }
 function render(){view==='home'?home():view==='quiz'?quiz():result()}
 dialog.querySelector('.dialog-close').onclick=()=>dialog.close();dialog.onclick=e=>{if(e.target===dialog)dialog.close()};
-try{[bank,sources,assetManifest]=await Promise.all([fetch('bank.json?v=3').then(r=>r.json()),fetch('sources.json').then(r=>r.json()),fetch('assets.json?v=3').then(r=>r.json())]);qmap=new Map(bank.map(q=>[q.id,q]));loadState();render()}catch(e){root.innerHTML='<div class="loading">题库读取失败，请刷新页面重试。</div>';console.error(e)}
+try{[bank,sources,assetManifest]=await Promise.all([fetch('bank.json?v=4').then(r=>r.json()),fetch('sources.json').then(r=>r.json()),fetch('assets.json?v=4').then(r=>r.json())]);qmap=new Map(bank.map(q=>[q.id,q]));loadState();render()}catch(e){root.innerHTML='<div class="loading">题库读取失败，请刷新页面重试。</div>';console.error(e)}
