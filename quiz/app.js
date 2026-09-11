@@ -71,4 +71,4 @@ function bind(){
 }
 function render(){view==='home'?home():view==='quiz'?quiz():result()}
 dialog.querySelector('.dialog-close').onclick=()=>dialog.close();dialog.onclick=e=>{if(e.target===dialog)dialog.close()};
-try{[bank,sources,assetManifest]=await Promise.all([fetch('bank.json').then(r=>r.json()),fetch('sources.json').then(r=>r.json()),fetch('assets.json').then(r=>r.json())]);qmap=new Map(bank.map(q=>[q.id,q]));loadState();render()}catch(e){root.innerHTML='<div class="loading">题库读取失败，请刷新页面重试。</div>';console.error(e)}
+try{[bank,sources,assetManifest]=await Promise.all([fetch('bank.json?v=3').then(r=>r.json()),fetch('sources.json').then(r=>r.json()),fetch('assets.json?v=3').then(r=>r.json())]);qmap=new Map(bank.map(q=>[q.id,q]));loadState();render()}catch(e){root.innerHTML='<div class="loading">题库读取失败，请刷新页面重试。</div>';console.error(e)}
