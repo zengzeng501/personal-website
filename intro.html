@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#F1EAE0">
+  <title>曾玲｜动画自我介绍</title>
+  <meta name="description" content="用一本立体书，认识曾玲。观看动画自我介绍视频。">
+  <meta property="og:type" content="video.other">
+  <meta property="og:title" content="曾玲｜动画自我介绍">
+  <meta property="og:description" content="打开这本立体书，认识曾玲。">
+  <meta property="og:image" content="https://zengzeng501.github.io/personal-website/intro-poster.jpg">
+  <meta property="og:url" content="https://zengzeng501.github.io/personal-website/intro.html">
+  <link rel="stylesheet" href="css/style.css?v=20260916">
+  <style>
+    .intro-page { max-width: 1120px; margin: 0 auto; padding: clamp(28px, 5vw, 64px) 20px 72px; }
+    .intro-kicker { color: var(--red); font-family: var(--mono); font-size: 12px; letter-spacing: .2em; }
+    .intro-title { font-family: var(--serif); font-size: clamp(32px, 5vw, 54px); line-height: 1.18; margin: 12px 0; }
+    .intro-lead { color: var(--ink-soft); font-size: clamp(15px, 2vw, 18px); margin-bottom: 30px; }
+    .intro-card { background: var(--paper); border: 1px solid var(--paper-edge); border-radius: 16px; padding: clamp(8px, 1.5vw, 16px); box-shadow: var(--shadow); }
+    .intro-video { display: block; width: 100%; aspect-ratio: 16 / 9; background: #201b18; border-radius: 9px; }
+    .intro-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 22px; margin-top: 22px; }
+    .intro-play { appearance: none; border: 0; border-radius: 999px; background: var(--ink); color: var(--paper); padding: 12px 24px; font: 600 15px var(--sans); cursor: pointer; }
+    .intro-play:hover, .intro-play:focus-visible { background: var(--blue); }
+    .intro-link { color: var(--blue); text-decoration: underline; text-underline-offset: 3px; }
+    .intro-note { color: var(--ink-soft); font-size: 13px; margin-top: 15px; }
+    @media (max-width: 620px) {
+      .nav { padding: 12px 18px; }
+      .nav-links a:not(:last-child) { display: none; }
+      .nav-brand { font-size: 16px; }
+      .intro-page { padding-top: 28px; }
+    }
+  </style>
+</head>
+<body>
+  <nav class="nav" aria-label="网站导航">
+    <a class="nav-brand" href="index.html"><span class="monogram">曾</span><span class="text">曾玲 · 个人网页</span></a>
+    <div class="nav-links"><a href="index.html">返回个人主页</a></div>
+  </nav>
+  <main class="intro-page">
+    <p class="intro-kicker">A POP-UP BOOK ABOUT ME</p>
+    <h1 class="intro-title">你好，我是曾玲。</h1>
+    <p class="intro-lead">翻开这本立体书，看看我的学习、作品和经历。视频约 2 分 25 秒。</p>
+    <div class="intro-card">
+      <video id="introVideo" class="intro-video" controls playsinline preload="metadata" poster="intro-poster.jpg" aria-label="曾玲动画自我介绍视频">
+        <source src="intro-zengling.mp4" type="video/mp4">
+        您的浏览器暂不支持视频播放。请使用下方的视频文件链接。
+      </video>
+    </div>
+    <div class="intro-actions">
+      <button class="intro-play" type="button" id="playButton">▶ 播放视频</button>
+      <a class="intro-link" href="intro-zengling.mp4">打开视频文件</a>
+      <a class="intro-link" href="index.html">浏览个人网站</a>
+    </div>
+    <p class="intro-note">手机扫码后，点击播放即可观看；建议打开声音。</p>
+  </main>
+  <footer class="footer"><span>© 2026 曾玲 · 个人网页</span><span>动画自我介绍</span></footer>
+  <script>
+    document.getElementById('playButton').addEventListener('click', function () {
+      const video = document.getElementById('introVideo');
+      video.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      video.play();
+    });
+  </script>
+</body>
+</html>
